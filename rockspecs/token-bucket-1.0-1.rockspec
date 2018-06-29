@@ -3,7 +3,7 @@ version = '1.0-1'
 
 
 source = {
-    url = 'git://github.com/vonafor/tarantool-token-bucket.git'
+    url = 'git://github.com/311devs/tarantool-token-bucket.git'
 }
 
 dependencies = {
