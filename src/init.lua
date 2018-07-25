@@ -1,6 +1,4 @@
-local module = {
-    Bucket = require('token-bucket.bucket')
-}
+local module = require('token-bucket.bucket')
 
 -- create infrustructure
 function module.start()
@@ -10,13 +8,14 @@ function module.start()
             -- temporary = true,
             format = {
                 {name = 'key', type = 'string'},
+                {name = 'kind', type = 'string'},
                 {name = 'value', type = 'number'},
                 {name = 'last_update', type = 'number'},
             }
         })
         _token_bucket:create_index('pk', {
             type = 'tree',
-            parts = {1, 'string'},
+            parts = {1, 'string', 2, 'string'},
             unique = true
         })
     end
