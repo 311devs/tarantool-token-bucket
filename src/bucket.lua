@@ -86,7 +86,7 @@ function clear(tb_params, chunk_size)
         local key, kind = row[1], row[2]
         local tb = tbs[kind]
         visited = visited + 1
-        if tb and tb:get(row, true) == tb['max_amount'] then
+        if tb and tb:get(row, true) >= tb['max_amount'] then
             space:delete{key, kind}
             deleted = deleted + 1
         end
